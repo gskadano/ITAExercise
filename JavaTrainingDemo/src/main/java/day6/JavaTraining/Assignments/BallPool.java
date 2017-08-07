@@ -34,6 +34,9 @@ public class BallPool extends Ball{
 		
 		for(String key : ballGroup.keySet()) {
 			int[] groupVal = ballGroup.get(key);
+			if(key.equals(Scale.notGroup)) {
+				break;
+			}
 			if(count==1) {
 				group1[0]=groupVal[0];
 				group2[1]=groupVal[1];
@@ -116,11 +119,15 @@ public class BallPool extends Ball{
 		compareResult = Scale.getCompareResult();
 		
 		if(compareResult.equals(Scale.compareEqual)) {
-			groupResult.put("Group2", groupList.get(1));
-			groupResult.put("Group3", groupList.get(2));
+//			groupResult.put("Group2", groupList.get(1));
+//			groupResult.put("Group3", groupList.get(2));
+			groupResult.put(Scale.GetGroup, groupList.get(1));
+			groupResult.put(Scale.GetGroup, groupList.get(2));
+			groupResult.put(Scale.notGroup, groupList.get(0));
 		}else if(compareResult.equals(Scale.compareLeft) || compareResult.equals(Scale.compareRight)) {
-			groupResult.put("Group1", groupList.get(1));
-			groupResult.put("Group2", groupList.get(2));
+			groupResult.put(Scale.GetGroup, groupList.get(0));
+			groupResult.put(Scale.GetGroup, groupList.get(1));
+			groupResult.put(Scale.notGroup, groupList.get(2));
 		}
 		
 		return groupResult;

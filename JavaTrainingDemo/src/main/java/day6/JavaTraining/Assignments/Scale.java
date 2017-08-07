@@ -3,7 +3,11 @@ package day6.JavaTraining.Assignments;
 import java.util.HashMap;
 
 public class Scale {
-
+	//Identifies what group to get
+	static String GetGroup = "Get this group";
+	static String notGroup = "Do not get this group";
+	
+	
 	static String FWGrp1EqlGrp2 = "Group 1 is equal to group 2";
 	static String FWGrp1GrtGrp2 = "Group 1 is greater than group 2";
 	static String FWGrp1LstGrp2 = "Group 1 is less than group 2";
