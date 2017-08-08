@@ -1,4 +1,4 @@
-package JavaTraining.Exercise1;
+package day1.JavaTraining.Exercises;
 
 public class Excercise1ClassC {
 
