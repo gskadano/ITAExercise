@@ -10,7 +10,7 @@ public class BallPool extends Ball{
 //		Ball ball = new Ball();
 		int[] ballPool = createBallPool(BallState.heavy);
 		HashMap<String,int[]> firstWeightResult = new HashMap<String,int[]>();
-		HashMap<String,int[]> secondWeightBallGroup = new HashMap<String,int[]>();
+		HashMap<String,int[]> secondWeightResult = new HashMap<String,int[]>();
 		
 		for(int i=0;i<ballPool.length;i++) {
 			System.out.println("Ball"+(i+1)+": "+ballPool[i]);
@@ -18,10 +18,10 @@ public class BallPool extends Ball{
 		
 		firstWeightResult=firstWeight(ballPool);
 		
-		secondWeightBallGroup = readyBallGroup(firstWeightResult);
+		secondWeightResult = secondWeight(firstWeightResult);
 		
 		System.out.println("");
-		calculateSecondWeight(secondWeightBallGroup);
+		calculateSecondWeight(secondWeightResult);
 		
 	}
 	
@@ -35,8 +35,9 @@ public class BallPool extends Ball{
 		for(String key : ballGroup.keySet()) {
 			int[] groupVal = ballGroup.get(key);
 			if(key.equals(Scale.notGroup)) {
-				break;
+				newBallGroup.put(key, ballGroup.get(key));
 			}
+			//Removes last ball from group
 			if(count==1) {
 				group1[0]=groupVal[0];
 				group2[1]=groupVal[1];
@@ -54,8 +55,12 @@ public class BallPool extends Ball{
 		return newBallGroup;
 	}
 	
-	public static void secondWeight() {
+	public static HashMap<String, int[]> secondWeight(HashMap<String, int[]> firstResult) {
+		HashMap<String, int[]> result = new HashMap<String, int[]>();
 		
+		result = calculateSecondWeight(firstResult);
+		
+		return result;
 	}
 	
 	public static HashMap<String, int[]> firstWeight(int[] balls) {
@@ -64,7 +69,8 @@ public class BallPool extends Ball{
 		
 		result = calculateFirstWeight(groupList);
 		
-		return result;
+		//Returns first weigh result for 2nd weigh calculation
+		return readyBallGroup(result);
 	}
 	
 	private static HashMap<Integer, int[]> getFirstWeightGroup(int[] balls){
@@ -83,69 +89,63 @@ public class BallPool extends Ball{
 		return groupList;
 	}
 	
-	public static void calculateSecondWeight(HashMap<String,int[]> groupList) {
+	public static HashMap<String, int[]> calculateSecondWeight(HashMap<String,int[]> groupList) {
+		HashMap<String, int[]> groupResult = new HashMap<String, int[]>();
 		int groupSize = groupList.size(), count=0;
+		
+		//Calculate weight of first two groups. 
+		//Last index in groups[] is the healthy ball group
 		int[] groups = new int[groupSize];
 		for(String key : groupList.keySet()) {
 			groups[count]=calculate(groupList.get(key));
 			count++;
 		}
 		
+		//Weight first and second index
 		weigh(groups[0],groups[1]);
 		String compareResult = Scale.getCompareResult();
 		
 		if(compareResult.equals(Scale.compareEqual)) {
-			groupResult.put("Group2", groupList.get(1));
-			groupResult.put("Group3", groupList.get(2));
-		}else if(compareResult.equals(Scale.compareLeft) || compareResult.equals(Scale.compareRight)) {
-			groupResult.put("Group1", groupList.get(1));
-			groupResult.put("Group2", groupList.get(2));
-		}
-	}
-	
-	public static HashMap<String, int[]> calculateFirstWeight(HashMap<Integer,int[]> groupList) {
-		HashMap<String, int[]> groupResult = new HashMap<String, int[]>();
-		String compareResult = "";
-		int groupSize = groupList.size();
-		int[] groups = new int[groupSize];
-		for(int i=0;i<groupSize;i++) {
-			groups[i]=calculate(groupList.get(i));
-		}
-		
-		//Get the group with odd ball
-//		int oddGroup = getOddGroup(groups);
-//		System.out.println("Odd group: "+oddGroup);
-		weigh(groups[0],groups[1]);
-		compareResult = Scale.getCompareResult();
-		
-		if(compareResult.equals(Scale.compareEqual)) {
-//			groupResult.put("Group2", groupList.get(1));
-//			groupResult.put("Group3", groupList.get(2));
-			groupResult.put(Scale.GetGroup, groupList.get(1));
-			groupResult.put(Scale.GetGroup, groupList.get(2));
+			groupResult.put(Scale.GetGroup+": Group2", groupList.get(1));
+			groupResult.put(Scale.GetGroup+": Group3", groupList.get(2));
 			groupResult.put(Scale.notGroup, groupList.get(0));
 		}else if(compareResult.equals(Scale.compareLeft) || compareResult.equals(Scale.compareRight)) {
-			groupResult.put(Scale.GetGroup, groupList.get(0));
-			groupResult.put(Scale.GetGroup, groupList.get(1));
+			groupResult.put(Scale.GetGroup+": Group1", groupList.get(0));
+			groupResult.put(Scale.GetGroup+": Group2", groupList.get(1));
 			groupResult.put(Scale.notGroup, groupList.get(2));
 		}
 		
 		return groupResult;
 	}
 	
-	//Calculate Odd Group
-//	private static int getOddGroup(int[] oddGroup) {
-//		HashMap<Integer, Boolean> groupResult = new HashMap<Integer, Boolean>();
-//		int group=1;
-//		for(int i=0;i<oddGroup.length;i++) {
-//			if(oddGroup[i]<0 || oddGroup[i]>0) {
-//				group=(i+1);
-//			}else {
-//				
-//			}
-//		}
-//		return group;
-//	}
+	public static HashMap<String, int[]> calculateFirstWeight(HashMap<Integer,int[]> groupList) {
+		HashMap<String, int[]> groupResult = new HashMap<String, int[]>();
+		String compareResult = "";
+		int groupSize = groupList.size();
+		
+		//Calculate weight of first two groups. 
+		//Last index in groups[] is the healthy ball group
+		int[] groups = new int[groupSize];
+		for(int i=0;i<groupSize;i++) {
+			groups[i]=calculate(groupList.get(i));
+		}
+		
+		//Weight first and second index
+		weigh(groups[0],groups[1]);
+		compareResult = Scale.getCompareResult();
+		
+		if(compareResult.equals(Scale.compareEqual)) {
+			groupResult.put(Scale.GetGroup+": Group2", groupList.get(1));
+			groupResult.put(Scale.GetGroup+": Group3", groupList.get(2));
+			groupResult.put(Scale.notGroup, groupList.get(0));
+		}else if(compareResult.equals(Scale.compareLeft) || compareResult.equals(Scale.compareRight)) {
+			groupResult.put(Scale.GetGroup+": Group1", groupList.get(0));
+			groupResult.put(Scale.GetGroup+": Group2", groupList.get(1));
+			groupResult.put(Scale.notGroup, groupList.get(2));
+		}
+		
+		return groupResult;
+	}
 	
 	private static int calculate(int[] group) {
 		int value=0;
