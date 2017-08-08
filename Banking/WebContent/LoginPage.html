@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<script>
+	var z;
+	function login(username, password) {
+		z = (x + y);
+		document.getElementById("test2").innerHTML = z;
+	}
+	
+	function getCredentials(){
+		var form = document.getElementById("loginForm").elements;
+		var uname = form.username.value;
+		var pass = form.password.value;
+		document.getElementById("test").innerHTML = uname;
+		login(uname,pass);
+	}
+	
+    function calculateAdd(x,y){
+    	z = (parseInt(x) + parseInt(y));
+    	document.getElementById("Demo").innerHTML = z;
+    }
+</script>
+</head>
+<body>
+	<p>Enter credentials to access bank</p>
+	<!-- <form action="LoginServlet" method="post"> -->
+	<form id="loginForm">
+		<table>
+			<tr>
+				<th>Username:</th>
+				<th><input id="username" type="text" value="test"></th>
+			</tr>
+			<tr>
+				<th>Password:</th>
+				<th><input id="password" type="password" value="test"></th>
+			</tr>
+		</table>
+		<button type="submit" onclick="getCredentials()">Login</button>
+	</form>
+	<p id="test"></p>
+	<p id="test2"></p>
+	
+    <form id="calculateForm">
+      <table>
+        <tr>
+          <th>Number1: </th>
+          <th><input id="num1" type="text" name="num1" value="12"></th>
+        </tr>
+        <tr>
+          <th>Number2: </th>
+          <th><input id="num2" type="text" name="num2" value="2"></th>
+        </tr>
+      </table>
+      <button type="submit" onclick="calculateAdd(document.getElementById('num1').value,document.getElementById('num2').value)">Calculate</button>
+    </form>
+    <p id="Demo"></p>
+</body>
+</html>
