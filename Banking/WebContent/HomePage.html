@@ -3,10 +3,51 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Welcome :D</title>
+<script>
+	function doAction(){
+		console.log("test");
+	}
+	function todeposit(){
+		console.log(document.getElementById("formDeposit").id);
+		document.getElementById("formDeposit").action = "Bank";
+	}
+	
+	function toWithdraw(){
+		document.getElementById("formDeposit").action = "Bank";
+	}
+	
+	function toBalance(){
+		document.getElementById("formDeposit").action = "Bank";
+	}
+</script>
 </head>
 <body>
-<img src="image/You-freaking-rock.gif"/></br>
-<img src="image/rock.gif"/></br>
+<h1>Select from Options to do</h1>
+<form id="formDeposit" onsubmit="toDeposit()" method="post">
+	<table border=1>
+		<tr>
+			<th>Deposit:</th>
+			<th><input id="depositAmnt" type="text" name="amount" value="0.0"></th>
+		</tr>
+		<tr>
+			<th><button type="submit" name="deposit" value="deposit">Deposit</button></th>
+		</tr>
+	</table>
+</form>
+<form id="formWithdraw" onsubmit="toWithdraw()" method="post">
+	<table border=1>
+		<tr>
+			<th>Withdraw:</th>
+			<th><input id="withdrawAmnt" type="text" name="amount" value="0.0"></th>
+		</tr>
+		<tr>
+			<th><button type="submit" name="withdraw" value="withdraw">Withdraw</button></th>
+		</tr>
+	</table>
+</form>
+<form id="formBalance" onsubmit="toBalance()" method="post">
+	<button type="submit" name="balance" value="balance">Check Balance</button>
+</form>
 <form action="TestServlet2" method="post">
 	<button name="signout" value="signout">Sign out</button>
 </form>

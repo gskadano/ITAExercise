@@ -3,11 +3,28 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Invalid Login</title>
+<script>
+	var z;
+	function login(username, password, form) {
+		/* z = (username + " " + password);
+		document.getElementById("test2").innerHTML = z;
+		console.log("testtesttest"); */
+		document.getElementById("formToLogin").action = "Login"
+	}
+	
+	function getCredentials(){
+		var form = document.getElementById("loginForm");
+		var uname = form.elements.username.value;
+		var pass = form.elements.password.value;
+		/* document.getElementById("test").innerHTML = uname; */
+		login(uname,pass, form);
+	}
+</script>
 </head>
 <body>
 <P>Username, password incorrect</P>
-<form action="TestServlet2" method="post">
-	<button name=Back value=back>Take me back!</button>
+<form id="formToLogin" onsubmit=getCredentials()>
+	<button type="submit">Take me back!</button>
 </form>
 </body>
 </html>

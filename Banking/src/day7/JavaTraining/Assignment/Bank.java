@@ -1,11 +1,8 @@
 package day7.JavaTraining.Assignment;
 
 import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,14 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Bank
  */
-@WebServlet("/Login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/Bank")
+public class Bank extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private int savings = 0;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public Bank() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,31 +29,9 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String uName=request.getParameter("username");
-		String pass=request.getParameter("password");
-		
-		/*Cookie uNameCookie = new Cookie("username",uName);
-		Cookie passCookie = new Cookie("password",pass);
-		
-		HttpSession session = new HttpSession();*/
-		
-		try{
-			if(uName==null && pass==null){
-				RequestDispatcher view = request.getRequestDispatcher("LoginPage.html");
-				view.forward(request, response);
-			}else{
-				if(uName.equals("admin") && pass.equals("admin")){
-					RequestDispatcher view = request.getRequestDispatcher("HomePage.html");
-					view.forward(request, response);
-				}else{
-					RequestDispatcher view = request.getRequestDispatcher("LoginError.html");
-					view.forward(request, response);
-				}
-			}
-		}catch(Exception e){
-			RequestDispatcher view = request.getRequestDispatcher("LoginError.html");
-			view.forward(request, response);
-		}
+		String formId = "";
+//		formId = request
+		System.out.println(formId);
 	}
 
 	/**
@@ -64,6 +40,23 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+	
+	private void deposit(int deposit){
+		this.savings += deposit;
+	}
+	
+	private String withdraw(int withdraw){
+		if(withdraw <= this.savings){
+			this.savings -= withdraw;
+			return "Successfully withdraw "+withdraw;
+		}else{
+			return "Insufficient fund";
+		}
+	}
+	
+	private String checkBalance(){
+		return "Current account balance is "+this.savings;
 	}
 
 }
