@@ -37,17 +37,17 @@ public class LoginServlet extends HttpServlet {
 		Cookie uNameCookie = new Cookie("username",uName);
 		uNameCookie.setMaxAge(10);
 		Cookie passCookie = new Cookie("password",pass);
-		passCookie.setMaxAge(20);
+		passCookie.setMaxAge(10);
 		
 		/*HttpSession session = new HttpSession();*/
-		RequestDispatcher view;
+//		RequestDispatcher view;
 		try{
 			if(uName==null && pass==null){
 //				view = request.getRequestDispatcher("LoginPage.html");
 //				view.forward(request, response);
 				response.sendRedirect("LoginPage.html");
 			}else{
-				if(uName.equals("admin") && pass.equals("admin")){
+				if((uName.equals("admin") && pass.equals("admin")) || (uName.equals("gskadano") && pass.equals("qwerty"))){
 //					view = request.getRequestDispatcher("HomePage.html");
 //					view = request.getRequestDispatcher("LoginError.html");
 //					view.forward(request, response);

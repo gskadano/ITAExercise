@@ -7,11 +7,20 @@
 		var showInput = true;
 		window.savings=0;
 		var actionToDo;
-		
-		window.onload = showLoginUser();
+		var user;
 		
 		function showLoginUser(){
-			document.getElementById("loginUser").innerHTML = "Hello "+document.cookie.username;
+			var cookie = document.cookie;
+			if(cookie == ""){
+				if(!alert("Session expired! Logging out...") == true){
+					/* toSignout(); */
+					window.location="LoginPage.html"
+				}
+			}else{
+				var cookies = cookie.split(';');
+				var name = cookie.split(';')[0].split('=')[1];
+				document.getElementById("loginUser").innerHTML = "Hello "+name;
+			}
 		}		
 		function showInputForm(action){
 			var inputForm = document.getElementById("divInputForm");
@@ -34,12 +43,6 @@
 	    	var action = document.getElementById("withdrawForm").id;
 	    	showInputForm(action);
 		}
-		function toBalance(){
-			document.getElementById("formBalance").action = "Bank";
-		}
-		function toSignout(){
-			document.getElementById("formBalance").action = "";
-		}
 		function calculate(){
 			var form = document.getElementById("inputForm");
 			var amount = form.elements.amount.value;
@@ -60,12 +63,13 @@
 			alert("Current savings amount is "+savings);
 		}
 		function toSignout(){
+			document.cookie = "";
 			var form = document.getElementById("signOutForm");
 			form.action = "Bank";
 		}
 	</script>
 </head>
-<body>
+<body onload = showLoginUser()>
 	<h1 id="loginUser"></h1>
 	<div id="option1">
 		<table border=1>
@@ -97,7 +101,7 @@
 						value="0.0"></th>
 				</tr>
 				<tr>
-					<th><button id="calButton" type="submit">Deposit</button></th>
+					<th><button id="calButton" type="submit">Submit</button></th>
 				</tr>
 			</table>
 		</form>
