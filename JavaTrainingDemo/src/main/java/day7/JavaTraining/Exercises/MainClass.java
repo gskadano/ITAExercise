@@ -4,8 +4,11 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(divide(6,0));
-		System.out.println(add(1000000000,50000000));
+//		System.out.println(divide(6,0));
+//		System.out.println(add(1000000000,50000000));
+		
+		//Call ExceptionExerciseBank
+		new ExceptionExerciseBank();
 
 	}
 	

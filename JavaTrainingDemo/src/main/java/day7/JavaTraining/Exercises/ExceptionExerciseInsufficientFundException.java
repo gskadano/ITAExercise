@@ -1,7 +1,11 @@
 package day7.JavaTraining.Exercises;
 
-public class ExceptionExerciseInsufficientFundException {
+public class ExceptionExerciseInsufficientFundException extends Throwable{
 	private int balance;
+	
+	public ExceptionExerciseInsufficientFundException(){
+		
+	}
 
 	public ExceptionExerciseInsufficientFundException(int need) throws Throwable{
 		// TODO Auto-generated constructor stub

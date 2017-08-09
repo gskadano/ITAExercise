@@ -34,10 +34,12 @@ public class LoginServlet extends HttpServlet {
 		String uName=request.getParameter("username");
 		String pass=request.getParameter("password");
 		
-		/*Cookie uNameCookie = new Cookie("username",uName);
+		Cookie uNameCookie = new Cookie("username",uName);
+		uNameCookie.setMaxAge(10);
 		Cookie passCookie = new Cookie("password",pass);
+		passCookie.setMaxAge(20);
 		
-		HttpSession session = new HttpSession();*/
+		/*HttpSession session = new HttpSession();*/
 		RequestDispatcher view;
 		try{
 			if(uName==null && pass==null){
@@ -49,6 +51,8 @@ public class LoginServlet extends HttpServlet {
 //					view = request.getRequestDispatcher("HomePage.html");
 //					view = request.getRequestDispatcher("LoginError.html");
 //					view.forward(request, response);
+					response.addCookie(uNameCookie);
+					response.addCookie(passCookie);
 					response.sendRedirect("HomePage.html");
 				}else{
 //					view = request.getRequestDispatcher("LoginError.html");

@@ -2,13 +2,18 @@ package day7.JavaTraining.Exercises;
 
 import java.util.Scanner;
 
-class Account{
+public class ExceptionExerciseBank{
+	
 	private int savings=0;	
 	Scanner sc = new Scanner(System.in);
 	
-	public Account(){
+	/*=====================================================*/
+	/*Start program*/
+	/*=====================================================*/
+	
+	/*public ExceptionExerciseBank(){
 		getOptions();
-	}
+	}*/
 	
 	public void getOptions(){
 		System.out.println("====== Select an option: ======");
@@ -38,9 +43,14 @@ class Account{
 				System.out.println("Exiting...");
 			}
 		}else{
-			
+			System.out.println("Invalid input. Must enter an amount");
+			getOptions();
 		}
 	}
+	
+	/*=====================================================*/
+	/*Do a deposit*/
+	/*=====================================================*/
 	
 	private void doDeposit() {
 		int deposit=0;
@@ -64,10 +74,14 @@ class Account{
 		}
 	}
 
-	private void deposit(int deposit){
+	public void deposit(int deposit){
 		this.savings += deposit;
-		getOptions();
+//		getOptions();
 	}
+	
+	/*=====================================================*/
+	/*Do a withdrawal*/
+	/*=====================================================*/
 	
 	private void doWithdraw() {
 		int withdraw=0;
@@ -80,7 +94,12 @@ class Account{
 		if(sc.hasNextInt()){
 			withdraw = sc.nextInt();
 			if(withdraw > 0){
-				withdraw(withdraw);
+//				try {
+//					withdraw(withdraw);
+//				} catch (ExceptionExerciseInsufficientFundException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
 			}else{
 				System.out.println("Invalid amount!!!");
 				getOptions();
@@ -91,22 +110,28 @@ class Account{
 		}
 	}
 	
-	private void withdraw(int withdraw){
+	//Comment for test
+	//Uncomment for running program
+	public void withdraw(int withdraw) throws Throwable{
 		int need = 0;
-		if(withdraw <= this.savings){
+//		if(withdraw <= this.savings){
 			this.savings -= withdraw;
-		}else{
-			need = withdraw-this.savings;
-			try {
+//		}else{
+//			need = withdraw-this.savings;
+//			try {
 				throw new ExceptionExerciseInsufficientFundException(need).remainingFund();
-			}catch (Throwable e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-//				e.getCause();
-			}
-		}
-		getOptions();
+//			}catch (Throwable e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+		
+//		getOptions();
 	}
+	
+	/*=====================================================*/
+	/*Check account balance*/
+	/*=====================================================*/
 	
 	private void doCheckBalance(){
 		checkBalance();
@@ -116,22 +141,9 @@ class Account{
 	private void checkBalance(){
 		System.out.println("Current account balance is "+this.savings);
 	}
-}
-
-public class ExceptionExerciseBank{
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Account acc = new Account();
-		
-//		System.out.println("Current balance is "+acc.checkBalance());
-//		acc.deposit(500);
-//		System.out.println("Current balance is "+acc.checkBalance());
-//		
-//		acc.withdraw(200);
-//		System.out.println("Current balance is "+acc.checkBalance());
-//		acc.withdraw(600);
-//		System.out.println("Current balance is "+acc.checkBalance());
+	
+	public int checkAccBalance(){
+		return this.savings;
 	}
 
 }
