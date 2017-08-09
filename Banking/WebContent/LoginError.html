@@ -13,11 +13,8 @@
 	}
 	
 	function getCredentials(){
-		var form = document.getElementById("loginForm");
-		var uname = form.elements.username.value;
-		var pass = form.elements.password.value;
-		/* document.getElementById("test").innerHTML = uname; */
-		login(uname,pass, form);
+		var form = document.getElementById("formToLogin");
+		form.action = "LoginError";
 	}
 </script>
 </head>

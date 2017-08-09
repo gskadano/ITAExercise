@@ -32,6 +32,7 @@ public class Bank extends HttpServlet {
 		String formId = "";
 //		formId = request
 		System.out.println(formId);
+		response.sendRedirect("LoginPage.html");
 	}
 
 	/**

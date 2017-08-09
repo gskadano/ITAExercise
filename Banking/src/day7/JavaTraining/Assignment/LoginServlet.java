@@ -38,23 +38,28 @@ public class LoginServlet extends HttpServlet {
 		Cookie passCookie = new Cookie("password",pass);
 		
 		HttpSession session = new HttpSession();*/
-		
+		RequestDispatcher view;
 		try{
 			if(uName==null && pass==null){
-				RequestDispatcher view = request.getRequestDispatcher("LoginPage.html");
-				view.forward(request, response);
+//				view = request.getRequestDispatcher("LoginPage.html");
+//				view.forward(request, response);
+				response.sendRedirect("LoginPage.html");
 			}else{
 				if(uName.equals("admin") && pass.equals("admin")){
-					RequestDispatcher view = request.getRequestDispatcher("HomePage.html");
-					view.forward(request, response);
+//					view = request.getRequestDispatcher("HomePage.html");
+//					view = request.getRequestDispatcher("LoginError.html");
+//					view.forward(request, response);
+					response.sendRedirect("HomePage.html");
 				}else{
-					RequestDispatcher view = request.getRequestDispatcher("LoginError.html");
-					view.forward(request, response);
+//					view = request.getRequestDispatcher("LoginError.html");
+//					view.forward(request, response);
+					response.sendRedirect("LoginError.html");
 				}
 			}
 		}catch(Exception e){
-			RequestDispatcher view = request.getRequestDispatcher("LoginError.html");
-			view.forward(request, response);
+//			view = request.getRequestDispatcher("LoginError.html");
+//			view.forward(request, response);
+			response.sendRedirect("LoginError.html");
 		}
 	}
 
