@@ -1,0 +1,124 @@
+----------------------------------
+--- JAVA EE Basic Path route -----
+----------------------------------
+Step 0 (Java language)
+Step 1 (Tools & Framework)
+Step 2 (JAVA EE Web Application)
+Step 3 (MVC Frameworks)
+Step 4 (Web Services)
+Step 5 (Frontend Stack)
+
+
+------------------------
+--- GIT ----------------
+------------------------
+GIT 3 places
+o Local
+o GIT Repository (Remote)
+o Server
+
+
+----------------------------------------------------------
+--- Principle for usable design & usability metrics ------
+----------------------------------------------------------
+Usability Engineering Lifecycle
+o Know the user
+o Competitive Analysis
+o Set usability goals
+o Parallel Design
+o Participatory Design
+o 
+
+Know The User
+o Observe the users in working environment
+o Individual user characteristics
+o Task Analysis
+o Functional Analysis
+o Evolution of user and task
+
+Competitive Analysis
+o Competitive analysis of software components
+	- Use existing interface framework as far as possible
+o Competitice analysis of competing systems
+
+Set Usability Goals
+o Decide in advance on usability metrics and desired level of measured usabiltiy (usability goal line)
+o Financial impact analysis - estimate savings based on "loaded cost" of users, compared to cost of usability effort
+
+Parallel Design
+o Explore design alternatives - designers should cwork "independently", then compare draft designs
+o Brainstorm with whole team (engineers, graphic designer, writer, marketing types, usabilty specialist, one or two representative users)
+
+How to Brainstorm
+o Meet away from usual workplace (different building, but in mountains)
+o Use plenty of paper. Cover the walls with it!
+o Draw. Scribble. Use lots o coloured pens
+o Three rules during brainstorming:
+	- No one is allowed to critisize another's ideas
+	- Engineers must not say it can't be implements
+o Only after brainstorming, organise ideas and consider their practicality and viability
+
+Participatory Design
+o Have accessto pool of representative users
+o Users become first class members in design process
+	- Active collaboration vs passive participants
+o Users considered subject matter experts
+o Iterative process
+o Guided discussion of prototyps, paper mock-ups, screen designs with representative users
+o Similar to JAD though of British/Scandinavian origin
+o Users are execellent at reacting to suggested system designs
+	- Designs must be conrete and visible
+o Users bring in importatnt "folk" knowledge of work context
+	- Knowledge may e otherwise inaccessible to design team
+o Greater buy-in for the system often results
+o Hard to get good pool of end users
+	- Expensive, relactant
+o Users are not expert designers
+	- Don't expect them to come up with design ideas from scratch
+o The user is not always right
+	- Don't expect them to know what they want
+
+Methods of Involving Users
+o At the very least, talk to users
+o Interviews
+o Contextual inquiry
+o Explain designs
+o Important to have visuals and/or demos
+
+
+Coordinated Design of Total Interface
+o Consistency across total interface: documentation, conline help, tutorials, videotapes, training classes as well as screens and dialogues. By means of:
+	- Interface standards: specfic rules as tohow interface should look and feel
+	- Widget libraries: shared code implementation standard UI functionality 
+	- Shared culture: training, meetings, "interface evangelist"
+
+Applying Guidelines
+o Guielines
+
+Prototyping
+o Perform usability evaluation
+
+Iterative Design
+
+Follow-up Studies
+o Follow-up of what is done
+
+Planning Usabiltiy Activities
+o Planning / prioritizing the activities
+o Plotting the activities, which will com first and which is last
+
+---------------------------------
+--- Unit Testing  with JUNIT ----
+---------------------------------
+
+
+
+
+NOTES!!!
+- Designing test classes depends on how big is your class
+
+
+Activities
+o Basic JAVA exam
+o GIT practice on eclipse (Creating repo, close, branching, merging)
+o Usability Concepts

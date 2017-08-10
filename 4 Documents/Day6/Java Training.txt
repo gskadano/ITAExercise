@@ -1,0 +1,86 @@
+--------------------------------------------
+--- Java Concurrency and Multithreading ----
+--------------------------------------------
+Sequential Programming 
+o Doing a task from A-Z, one step at a time
+
+Simulating Parallel Programming
+o Removing the sequential assumption creates bth opportunities and challenges
+	- Pogramming
+		~ Divide work among threads of execution and coordinate (synchronize) them
+	- Algorithms
+		~ more throughput: work done per unit wall-clock time - speedup
+		~ more origanization required
+	- Data structure
+		~ May need to support concurrent access (multipple thread operating on data at the same time)
+
+Problems that might encounter on Parallel programming
+o Resources
+o Data access
+o Exceptions
+o Programming level
+
+Multitasking and Multithreading
+o Multitasking, the ablility of a computer to do multiple jobs
+
+What are Threads
+o A thread is like the electricity passing through the wire to the devices. A single or multiple wire can power the devices to run
+
+Advantages of Thread
+o Easier to program
+o Can provide better performance
+
+Disadvantages of Threads
+o Multiple threads can lead to deadlock
+o Overhead of switching between threads
+
+Parallel  Processing
+o Multi-Processor Systems
+o Multi-Code CPUs
+
+Creating Threads
+o Extends "Thread"
+o Implementing "Runnable" class
+
+Thread Methods
+o void Start()
+o void run()
+o sleep(int m) / sleep(int m, int n)
+	- the thread sleeps for m (millisecond), plus n (nanoseconds)
+o yield
+	- Causes the currently executing thread object to temporarily pause and allow other threads to execute
+
+Implementing "Runnable"
+
+
+State of Java Threads
+o New - Created not started
+o Runnable - Created, started not able to run
+o Blocked - Created and started but
+o Dead - 
+
+
+------------------------------------
+--- Java Regular Expression --------
+------------------------------------
+o A way to represent patterns by strings
+o The matcher converts a pattern into a finite 
+
+
+
+
+NOTES!!!
+- Multitasking have two level
+	~ Operating System level
+	~ Language level (Programming language level). In java, it is called thread
+- In OS level, a task is called a process. In Language level, it is called a thread
+- Process have threads
+- Process is a single task
+- Threads can have a sub thread
+- regexlib.com/CheatSheet.aspx
+
+
+Questions:
+o How to escape deadlock
+o How do Runnable set prioritize
+o How do Threads run

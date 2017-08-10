@@ -1,0 +1,75 @@
+--------------------------------------
+--- Functional Programming -----------
+--------------------------------------
+o Functional program have no side effect
+o Functional program is immutable
+o Functional program does not interfere with other interface
+o No Exception throwing
+o Concerns on the input and the output
+
+--------------------------------------
+--- Java Script ----------------------
+--------------------------------------
+Request and Response
+
+Server side
+o Accepts a request
+o Decides whether to:
+	- send a request to anothr server
+	- send a response to the client
+
+Client side
+o The "Browser"
+o Javascript handles the client side
+
+
+Why use client-side programming?
+o PHP already allows us to create dynamicweb pages. Why also use client-side scripting?
+	- Client-side scripting (JS)
+		~ Usability
+		~ Efficiency
+		~ event-driven
+	- server-side prgoramming (PHP) benefits:
+		~ security
+		~ compatibility
+		~ power
+
+Javascript
+o A lightweight programming language ("scripting language")
+	- used to make web pages interactive
+	- insert dynamic test into HTML (e.g. user name)
+	- react to events (e.g. page load user click)
+	- get information about a user's computer (e.g. browser tpye)
+	- perform calculations on user's computer (e.g. form validation)
+
+Javascript vs Java
+o interpreted, not compile
+o more relaxed syntax and rules
+
+
+Javascript vs PHP
+o similarities:
+	- both are interpreted, not compiled
+	- both are relaxed about syntax, rules, and types
+	- both a re case sensitive
+
+o differences
+	- JS is more object-oriented
+
+-------------------------------
+--- Exception Handling --------
+-------------------------------
+
+
+
+
+
+NOTES!!!
+- Scripting language does not need to compile
+- Scripting language are mostly a list of commands
+- Java script is event-driven
+
+
+
+To-Do:
+- Review on JavaScript / HTML / CSS

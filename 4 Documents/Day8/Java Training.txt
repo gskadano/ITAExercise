@@ -1,0 +1,82 @@
+----------------------
+--- TDD --------------
+----------------------
+JUNIT
+
+@Test
+@Before
+@WithTest
+@BeforeTest //
+@AfterTest //
+@BeforeClass
+@AfterClass
+
+TDD
+o turns traditional development around
+	- Write test code before the methods
+	- Do so in very small steps
+
+
+Benefit:
+o Rapid feedback
+o Interface before algorithm
+o Know when you're finished
+o Change the code with confidence
+
+Principles of TDD
+o maintains an enhaustive suite of Programmer Tests
+o no code goes into production unless it has associated tests
+o write the test first
+o determine what code needed to write if programming by intention
+	- then you are designing as you write tests
+
+
+--------------------
+--- Javascript -----
+--------------------
+o JS was introduces as part of Netscape 2.0 browser
+o Javascript language itself has no input/output statements
+o It is for simplicity
+o
+
+Javascript Properties
+o Components of a JS implementation
+	- Scripting engine: interpreter plus required ECMAScript functionality (core library)
+	- Hosting environment: functionality specific to environment
+		~ Example: browsers provide alert nad prompt
+
+Developing JS Software
+
+
+JS Function
+o Function call semantics details
+	- Arguments
+		~ May be expressions
+	- 
+
+
+--------------------------------
+--- DHTML and DOM --------------
+--------------------------------
+o DHTML (Dynamic HTML)
+	- consists of:
+		~ XHTML
+		~ CSS
+		~ Scripting language
+o A combination of technologies used to create animated documents
+o Not a W3C standard
+	- Originally, a marketing term used by Netscape and microsoft
+o Using scripts
+
+HTML DOM (Document-Object-Model)
+
+DOM and JS
+o Combined w/ JS, every element in HTML is represented by an object
+o Elements can be manipulated using the properties and methods of the corresponding objects
+
+
+
+
+
+NOTES!!!
+- 

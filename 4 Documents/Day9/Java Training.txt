@@ -1,0 +1,103 @@
+-----------------------------------
+--- JS & DOM ----------------------
+-----------------------------------
+DHTML
+o a combination of several built-in browser feature for fourth generation browsers more dynamic
+o is NOT a scripting language but a browser feature- or enhancement- that makes the browser dynamic
+o uses a host of different technologies - the JS, VBscript, the DOM, layers, CSS - to create HTML that can change
+o made up of HTML, CSS, Scripting language. All three are map on DOM
+
+Tools of DHTML
+o HTML and XML 
+	- Partitions and Organizes the content
+o CS 
+	- Defines the Presentation of the content
+o Scripting (JavaScript, Jscript, VBScript) 
+	- Adds interactivity to the page
+o DOM 
+	- Define what and how elements are exposed for script access
+
+DOM
+o a platform and language neutral interface allowing programs and scripts to dynamically access and update the content, structure and style of the element
+o is not part of scripting language
+o both ()EI and Netscape) DOMs break down web pages into roughly for type of component
+s	- Objects, Properties, Events, and Methods
+	- Properties
+	- Methods 
+	- Events
+
+Nodes
+o The W3C DOM defines the elements of a document is a node of particular type
+
+Node Types
+o Common types are: document node, element node, text node, 
+
+PROS and CONS
+o PROS
+	- Robust API forDOM tree
+	- Relatively simple to modify data structure
+
+o CONS
+	-
+
+
+JavaScript
+o There are three type of object
+
+AJAX (Asynchronous JavaScaript and XML)
+o a web development technique from creating interactive web applications
+o if you know JavaScript, HTML, CSS, and XML, then you need to spend just one hour to start w/ Ajax
+o is a new technique for creating better, faster, and more interactive web applications w/ the help of XML, HTML, CSS, and JavaSCript
+o uses XHTML for content, CSS for presentation, along w/ DOM and JavaScript for dynamic content display
+o Makes the website more asynchronize
+
+Rich Internet Application Technology
+o AJAX mostly viable Rich Internet Application (RIA) technology so far. It is getting tremendous industry momentum and several tool kit and framework are emerging. 
+
+Steps of AJAX Operation
+1 A client event occurs
+2 An XMLHttpRequest object is created
+3 The XMLHttpRequest object is configured
+4 The XMLHttpRequest object makes an asynchronous request to the Webserver
+5 The Webserver return the result containing XML document
+6 XMLHttpRequest object calls the callback() function and process the result
+7 The HTML DOM is updated
+
+XMLHttpRequest
+
+---------------------------
+--- JSON & XML ------------
+---------------------------
+JSON (JavaScript Object Notation)
+o language independent
+o most programming language can easily red it and instantiate objects or some other data structure
+o a language used to create other language
+o JSON must have no duplicate keys like in databases
+o A JSON can have en empty array ("[]") or an array with null value ("[null]")
+o JSON chars are a superset of XML chars
+o simpler than XML and more compact
+o has a better fir for OO systems than XML
+o not as extensible as XML
+o Preferred for simple data exchange by many
+o Less syntax, no semantics
+o No schemas required
+
+
+XML
+o a language used to create other language
+
+
+
+
+
+
+NOTES!!!
+- DOM (Document-Object-Model) implements as a tree (heirarchy)
+- DOM is an API, built in most of the browsers
+- DOM is an HTML object
+- DOM is a language neutral interface
+- Client-side object are create by browsers
+- Microsoft IE and Netscape doe not share the same DOM
+- JavaScript is hard to debug
+- AJAX is open standard
+

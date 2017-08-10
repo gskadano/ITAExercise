@@ -1,0 +1,28 @@
+Exception Handling
+
+Two type of exceptions
+o Check
+	- Exceptions that inherit from a class Exception but not from RuntimeException
+	- Compiler enforces a catch-or-declare requirements
+	- Could handle the exception and have another way
+o Uncheck
+	- Inherit from class RuntimeException or class Error
+	- Happens in runtime
+	- RuntimeExceptions
+
+When to use exception handling
+o Exception handling designed to process synchronous errors
+o Synchronous errors - occur when a statement executes
+o Assynchronous errors - occur in parallel w/ and independent of the program's flow of control
+
+
+
+
+NOTES:
+o Applet vs Servlet (App-Application(Client side) | Serv-Server(Server side)) 
+o Don't use exceptions as break on a program
+o Memory leak - Opening something that you don't close
+o Exceptions occured on the FINALLY block could overright the exception occured on the TRY block
+o Avoid putting code that could throws an exception on the FINALLY block
+o Exceptions are possible program related while errors are possible hardware related
+o J2SE VS J2EE 

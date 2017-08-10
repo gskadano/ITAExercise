@@ -1,0 +1,144 @@
+Java Training
+--------------------
+--- Maven ----------
+--------------------
+o A java project management and integration build tool
+o Based on the concept of XML Project Object Model (POM)
+o Originally developed for building Turbine
+o A small core with numerous plugins (in Jelly)
+
+Artifact Repository
+o Local Repository
+	- A local mirror/cache of download artifacts from remote repository
+	- Located at ${user.home}/.maven/repository
+
+Objective of Maven
+o Making a build process easy
+o Providing a uniform build system
+o Providing a quality project information
+o Providing guidelines for best practices development
+o Allowing transparent migration to new features
+
+
+Maven Build Lifecycle
+o Validate
+o Compile
+o Test
+o Package
+o Integration
+o Verify
+o Install
+o Deploy
+
+---------------------------------------
+--- Functional Programming in JAVA ----
+---------------------------------------
+
+State, Stateless, stateful
+
+Wy should change the way of coding
+o Functional programs are simpler
+	- Which makes them easier to write and maintain
+o No temporal couplings
+o Fewer concurrency issues
+o No asking "What's the state?"
+
+Can OOP be functional programming?
+o OO is: procedure + state
+o No, OO is 'exposed' procedure
+	- And 'hidden' state
+		* exposed,hidden (Encapsulation)
+
+Impose discipline on change of state
+o Some state must change
+
+SIDE-BY-SIDE COMPARISON
+Imperative (Non-functional)
+o Maintains state
+o Manually parallelizable
+o More code
+o Less intuitive
+o Runtime exceptions, like NullPointerException
+
+Function
+o Stateless
+o Automatically parallelizable
+o Less code (usually)
+o More intuitive
+o More errors caught at compile time
+
+How to start thinking in the Functional style
+o Avoid "for" loops
+	- If you find yourself using one, there's probably a better way to do what you want
+o Use fewer variables
+
+Why Do We Need Functional Programming?
+o Main purpose is for multithreading
+o Avoiding the changing of states
+o Allows a program to be more parallel
+o 
+
+----------------------
+--- GENERICS ---------
+----------------------
+Concepts
+o Generalizing Collection Classes
+o Using Generics w/ other Java 1.5 features
+o Integration of Generics w/ previous releases
+o User built generic classes
+
+Type Safety & Type Casting
+
+----------------------
+--- ANNOTATION -------
+----------------------
+
+o Annotation provide data about a program that is not part of the program itself. An annotation is an attribute of a program element
+o As of release 5.0, the platform has a general purpse annotation (metadata) facility that permits to define and use "your own" annotation types
+o The facility consists of:
+	- a syntax for declaring annotation types
+	- a syntax for annotating declarations
+	- APIs for reading annotations
+	- a class file representation for annotation
+	- an annotation processing tool
+
+What can be annotated?
+Annotation program elements:
+o package
+o class, including
+	- interface
+	- enum
+o method
+o field
+o only at compile time
+	- local variable
+	- formal parameter
+
+Annotataions used by the Compiler
+o There are three annotation types that are predefined by the language specification itself:
+	- @Deprecated (indicates that the marked element is deprecated and should no longer be used)
+	- @Override (informs the compiler that the element is meant to override an element declared in a superclass)
+	- @SuppressWarnings (tells the compiler to suppress specific warnings that it would otherwise generate)
+
+
+
+
+
+NOTES:
+- Transitive dependency (A dependency of dependency)
+- Maven is a apache project
+- On project directory, target folder contains the compiled files
+- Threads of flow of task, composed of processes
+- State changing is messy, multiple CPU's working on the same problem but have different states
+- Functional programming uses more memory
+- Functional programming are stateless but takes more memory
+- "ArrayList<String>" - "ArrayList" is base type / "String" is parameter type
+- Collection
+	~ List
+		* ArrayList
+		* LinkedList
+		* Vector
+			o Stack
+- Annotations main use is for documentation also for junit
+
+

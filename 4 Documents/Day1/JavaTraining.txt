@@ -1,0 +1,26 @@
+JDK
+o a tool used for development program
+
+JRE
+o contains libraries for running the program
+o provides the runtime environment
+
+JVM
+o provides a platform-independent way of executing code
+o executes the program on java bytecode
+
+
+Maven
+o Maven knows what jar files a needed through dependencies specified and goes through the online maven repository
+
+
+
+
+NOTE!!!
+- Pro Git (free book in GIT)
+- bird view - overview of the whole
+- insect view - detailed view
+- lion view 
+
+Abstraction - Design level
+Encapsulation - Implementation level; Data hiding
