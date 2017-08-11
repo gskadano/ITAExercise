@@ -10,7 +10,7 @@ public class ExceptionExerciseBank{
 	/*=====================================================*/
 	/*Start program*/
 	/*=====================================================*/
-	
+	//uncomment for working program
 	/*public ExceptionExerciseBank(){
 		getOptions();
 	}*/
@@ -51,7 +51,7 @@ public class ExceptionExerciseBank{
 	/*=====================================================*/
 	/*Do a deposit*/
 	/*=====================================================*/
-	
+	//uncomment deposit()
 	private void doDeposit() {
 		int deposit=0;
 		if(sc==null){
@@ -83,6 +83,7 @@ public class ExceptionExerciseBank{
 	/*Do a withdrawal*/
 	/*=====================================================*/
 	
+	//uncomment try...catch block for working program
 	private void doWithdraw() {
 		int withdraw=0;
 		if(sc==null){
